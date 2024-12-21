@@ -1,0 +1,106 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPdmyXG6d2ekIw7PYr3AS5j",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Fearfully-M/googlecollabs/blob/trunk/GoogleCollabs\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4AmxE_Xm6Fnf",
+        "outputId": "8d86dd2e-d1df-48b0-c655-20b8b70f37b3"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['apple', 'grape', 'elderberry', 'cherry', 'banana']\n"
+          ]
+        }
+      ],
+      "source": [
+        "# prompt: randomly select 5 things from a list\n",
+        "\n",
+        "import random\n",
+        "\n",
+        "def randomly_select_items(items, num_items_to_select):\n",
+        "  \"\"\"Randomly selects a specified number of items from a list.\n",
+        "\n",
+        "  Args:\n",
+        "    items: A list of items to select from.\n",
+        "    num_items_to_select: The number of items to randomly select.\n",
+        "\n",
+        "  Returns:\n",
+        "    A new list containing the randomly selected items, or None if the\n",
+        "    number of items to select is invalid.\n",
+        "  \"\"\"\n",
+        "  if not isinstance(items, list):\n",
+        "    raise TypeError(\"items must be a list\")\n",
+        "  if not isinstance(num_items_to_select, int):\n",
+        "    raise TypeError(\"num_items_to_select must be an integer\")\n",
+        "  if num_items_to_select < 0 or num_items_to_select > len(items):\n",
+        "      return None  # Handle invalid input\n",
+        "  return random.sample(items, num_items_to_select)\n",
+        "\n",
+        "# Example usage:\n",
+        "my_list = [\"apple\", \"banana\", \"cherry\", \"date\", \"elderberry\", \"fig\", \"grape\"]\n",
+        "selected_items = randomly_select_items(my_list, 5)\n",
+        "\n",
+        "if selected_items:\n",
+        "    print(selected_items)\n",
+        "else:\n",
+        "    print(\"Invalid number of items to select.\")\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"hello world\")"
+      ],
+      "metadata": {
+        "id": "OVnA6AF-6f1C",
+        "outputId": "ea6e4c16-4e59-46b3-9e6e-939246f6e50e",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "hello world\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
